@@ -1,0 +1,12 @@
+!include <win32.mak>
+
+all: srv_allow2.Dll
+
+.c.obj:
+	$(cc) /I..\..\include /I..\..\ $(cdebug) $(cflags) $(cvarsdll) -I. -DCI_BUILD_MODULE -DUNICODE $*.c
+
+srv_echo.Dll: srv_echo.obj
+	$(link) $(linkdebug) $(dlllflags) /LIBPATH:..\..\ c_icap.lib -def:srv_allow2.def -out:$*.Dll $** $(DLL_ENTRY)  $(EXTRA_LIBS)
+
+clean:
+	del *.obj *.exe *.lib

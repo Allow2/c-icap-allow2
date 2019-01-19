@@ -1,0 +1,4 @@
+
+#SUBDIRS = @BUILD_SERVICES@
+
+SUBDIRS = allow2

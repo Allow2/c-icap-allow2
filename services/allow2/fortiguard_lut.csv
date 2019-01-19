@@ -1,0 +1,86 @@
+Default,false
+Abortion,false
+Advocacy Organizations
+Alcohol,false
+Alternative Beliefs,false
+Dating,false
+Gambling,false
+Lingerie and Swimsuit,false
+Marijuana,false
+Nudity and Risque,false
+Other Adult Materials,false
+Pornography,false
+Sex Education,
+Sports Hunting and War Games,false
+Tobacco,false
+Weapons (Sales),false
+File Sharing and Storage,"[1]"
+Freeware and Software Downloads,"[1]"
+Internet Radio and TV,"[1,8,10]"
+Internet Telephony,"[1,8,10]"
+Peer-to-peer File Sharing,"[1,8]"
+Streaming Media and Download,"[1,8,10]"
+Armed Forces,false
+Business,
+Charitable Organizations,
+Finance and Banking,
+General Organizations,
+Government and Legal Organizations
+Information Technology
+Information and Computer Security
+Online Meeting,"[1,8,9]"
+Remote Access,
+Search Engines and Portals,
+Secure Websites,
+Web Analytics,
+Web Hosting,
+Web-based Applications,
+Advertising,
+Arts and Culture,
+Auction,
+Brokerage and Trading,"[1,8]"
+Child Education,
+Content Servers,"[1,8]"
+Digital Postcards,"[1,8]"
+Domain Parking,false
+Dynamic Content,"[1,8]"
+Education,
+Entertainment,"[1,8]"
+Folklore,"[1,8]"
+Games,"[1,3,8]"
+Global Religion,"[1,8]"
+Health and Wellness,
+Instant Messaging,"[1,8,9]"
+Job Search,
+Meaningless Content,false
+Medicine,
+News and Media,
+Newsgroups and Message Boards,"[1,8]"
+Personal Privacy,
+Personal Vehicles,
+Personal Websites and Blogs,"[1,8]"
+Political Organizations,
+Real Estate,
+Reference,
+Restaurant and Dining,
+Shopping,"[1,8]"
+Social Networking,"[1,8,9]"
+Society and Lifestyles,"[1,8]"
+Sports,"[1,8]"
+Travel,"[1,8]"
+Web Chat,"[1,8,9]"
+Web-based Email,"[1,8,9]"
+Child Abuse,false
+Discrimination,false
+Drug Abuse,false
+Explicit Violence,false
+Extremist Groups,false
+Hacking,false
+Illegal or Unethical,false
+Plagiarism,false
+Proxy Avoidance,false
+Dynamic DNS,false
+Malicious Websites,false
+Newly Observed Domain,"[1,8]"
+Newly Registered Domain,"[1,8]"
+Phishing,false
