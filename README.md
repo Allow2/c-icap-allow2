@@ -33,6 +33,7 @@ You can also configure specific devices or proxy accounts as "always allow" or "
 
 # Dependencies
 
+* unix build tools: automake, autoconf
 * OpenCV - Used for all image and video classification.
 * C-ICAP - This is a c-icap module. It requires c-icap development libraries to be compiled. It is run through C-ICAP.
 * An ICAP enabled proxy which can do ACLs based on HTTP reply headers (Squid is one such proxy.)

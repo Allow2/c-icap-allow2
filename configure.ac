@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 
-AC_INIT(c_icap_classify,00000x)
+AC_INIT(c_icap_allow2,00000x)
 
 AM_MAINTAINER_MODE
 AM_CONFIG_HEADER(autoconf.h)
@@ -174,12 +174,12 @@ if test "$opencv" = "no" && test "$opencv_badversion" = "no"; then
 	LIBS=$OLD_LIBS
 fi
 
-dnl Check for TRE Regex Library
+dnl Check for Allow2 Library
 dnl -------------------------------------------------------------
-AC_MSG_CHECKING([for TRE regex header (tre/tre.h)])
-AC_CHECK_HEADER(tre/tre.h, [AC_DEFINE(HAVE_TRE_HEADER, 1, [Define HAVE_TRE_HEADER if TRE header found])], [AC_MSG_ERROR([Sorry, tre/tre.h not found, this is required])])
-AC_MSG_CHECKING([for TRE regex library])
-AC_CHECK_LIB(tre, tre_regwncomp, [AC_DEFINE(HAVE_TRE_LIB, 1, [Define HAVE_TRE_LIB if TRE library found])], [AC_MSG_ERROR([Sorry, TRE regex library not found, this is required])])
+dnl AC_MSG_CHECKING([for TRE regex header (tre/tre.h)])
+dnl AC_CHECK_HEADER(tre/tre.h, [AC_DEFINE(HAVE_TRE_HEADER, 1, [Define HAVE_TRE_HEADER if TRE header found])], [AC_MSG_ERROR([Sorry, tre/tre.h not found, this is required])])
+dnl AC_MSG_CHECKING([for TRE regex library])
+dnl AC_CHECK_LIB(tre, tre_regwncomp, [AC_DEFINE(HAVE_TRE_LIB, 1, [Define HAVE_TRE_LIB if TRE library found])], [AC_MSG_ERROR([Sorry, TRE regex library not found, this is required])])
 
 dnl Check for scandir
 dnl -------------------------------------------------------------
@@ -187,61 +187,61 @@ AC_CHECK_FUNCS(scandir, [AC_DEFINE(_DEFAULT_SOURCE, 1, [Define _DEFAULT_SOURCE i
 
 dnl Check for libicu
 dnl -------------------------------------------------------------
-AC_DEFUN([AC_CHECK_ICU], [
-  succeeded=no
-
-  if test -z "$ICU_CONFIG"; then
-    AC_PATH_PROG(ICU_CONFIG, icu-config, no)
-  fi
-
-  if test "$ICU_CONFIG" = "no" ; then
-    echo "*** The icu-config script could not be found. Make sure it is"
-    echo "*** in your path, and that taglib is properly installed."
-    echo "*** Or see http://ibm.com/software/globalization/icu/"
-  else
-    ICU_VERSION=`$ICU_CONFIG --version`
-    AC_MSG_CHECKING(for ICU >= $1)
-        VERSION_CHECK=`expr $ICU_VERSION \>\= $1`
-        if test "$VERSION_CHECK" = "1" ; then
-            AC_MSG_RESULT(yes)
-            succeeded=yes
-
-            AC_MSG_CHECKING(ICU_CFLAGS)
-            ICU_CFLAGS=`$ICU_CONFIG --cflags`
-            AC_MSG_RESULT($ICU_CFLAGS)
-
-            AC_MSG_CHECKING(ICU_CXXFLAGS)
-            ICU_CXXFLAGS=`$ICU_CONFIG --cxxflags`
-            AC_MSG_RESULT($ICU_CXXFLAGS)
-
-            AC_MSG_CHECKING(ICU_LIBS)
-            ICU_LIBS=`$ICU_CONFIG --ldflags`
-            AC_MSG_RESULT($ICU_LIBS)
-
-            AC_DEFINE(HAVE_LIBICU, 1, [Define HAVE_LIBICU if libicu is installed])
-        else
-            ICU_CFLAGS=""
-            ICU_CXXFLAGS=""
-            ICU_LIBS=""
-            ## If we have a custom action on failure, don't print errors, but
-            ## do set a variable so people can do so.
-            ifelse([$3], ,echo "can't find ICU &gt;= $1",)
-        fi
-
-        AC_SUBST(ICU_CFLAGS)
-        AC_SUBST(ICU_CXXFLAGS)
-        AC_SUBST(ICU_LIBS)
-  fi
-
-  if test $succeeded = yes; then
-     ifelse([$2], , :, [$2])
-  else
-     ifelse([$3], , AC_MSG_ERROR([Library requirements (ICU) not met.]), [$3])
-  fi
-])
-
-AC_MSG_CHECKING([for libicu])
-AC_CHECK_ICU(50.1.2)
+dnl AC_DEFUN([AC_CHECK_ICU], [
+dnl   succeeded=no
+dnl
+dnl   if test -z "$ICU_CONFIG"; then
+dnl     AC_PATH_PROG(ICU_CONFIG, icu-config, no)
+dnl   fi
+dnl
+dnl   if test "$ICU_CONFIG" = "no" ; then
+dnl     echo "*** The icu-config script could not be found. Make sure it is"
+dnl     echo "*** in your path, and that taglib is properly installed."
+dnl     echo "*** Or see http://ibm.com/software/globalization/icu/"
+dnl   else
+dnl     ICU_VERSION=`$ICU_CONFIG --version`
+dnl     AC_MSG_CHECKING(for ICU >= $1)
+dnl         VERSION_CHECK=`expr $ICU_VERSION \>\= $1`
+dnl         if test "$VERSION_CHECK" = "1" ; then
+dnl             AC_MSG_RESULT(yes)
+dnl             succeeded=yes
+dnl
+dnl             AC_MSG_CHECKING(ICU_CFLAGS)
+dnl             ICU_CFLAGS=`$ICU_CONFIG --cflags`
+dnl             AC_MSG_RESULT($ICU_CFLAGS)
+dnl
+dnl             AC_MSG_CHECKING(ICU_CXXFLAGS)
+dnl             ICU_CXXFLAGS=`$ICU_CONFIG --cxxflags`
+dnl             AC_MSG_RESULT($ICU_CXXFLAGS)
+dnl
+dnl             AC_MSG_CHECKING(ICU_LIBS)
+dnl             ICU_LIBS=`$ICU_CONFIG --ldflags`
+dnl             AC_MSG_RESULT($ICU_LIBS)
+dnl
+dnl             AC_DEFINE(HAVE_LIBICU, 1, [Define HAVE_LIBICU if libicu is installed])
+dnl         else
+dnl             ICU_CFLAGS=""
+dnl             ICU_CXXFLAGS=""
+dnl             ICU_LIBS=""
+dnl             ## If we have a custom action on failure, don't print errors, but
+dnl             ## do set a variable so people can do so.
+dnl             ifelse([$3], ,echo "can't find ICU &gt;= $1",)
+dnl         fi
+dnl
+dnl         AC_SUBST(ICU_CFLAGS)
+dnl         AC_SUBST(ICU_CXXFLAGS)
+dnl         AC_SUBST(ICU_LIBS)
+dnl   fi
+dnl
+dnl   if test $succeeded = yes; then
+dnl      ifelse([$2], , :, [$2])
+dnl   else
+dnl      ifelse([$3], , AC_MSG_ERROR([Library requirements (ICU) not met.]), [$3])
+dnl   fi
+dnl ])
+dnl
+dnl AC_MSG_CHECKING([for libicu])
+dnl AC_CHECK_ICU(50.1.2)
 
 dnl Check for programs
 AC_PROG_LN_S
@@ -256,6 +256,5 @@ AM_CONDITIONAL(USEOPENCV,[test a"$opencv" != ano])
 
 AC_OUTPUT([Makefile \
 services/Makefile \
-services/classify/Makefile \
-docs/Makefile docs/man/Makefile \
+services/allow2/Makefile \
 ])
